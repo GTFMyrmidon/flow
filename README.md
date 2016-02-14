@@ -23,8 +23,8 @@ Adding classes through myCUinfo is clunky. It is difficult to visualize what you
 
 #### Risks
 ---
-*New languages: JavaScript, HTML, CSS
-*Time constraint
+1. New languages: JavaScript, HTML, CSS
+2. Time constraint
 
 #### Requirements
 ---
@@ -34,7 +34,7 @@ Adding classes through myCUinfo is clunky. It is difficult to visualize what you
 
 #### Methodology
 ---
-
+Mash-up of Iterfall and Agile
 
 #### Project Tracking Software
 ---
