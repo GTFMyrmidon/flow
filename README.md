@@ -1,13 +1,13 @@
-flow
+Flow
 ======
 A smarter degree auditing system.
 
 #### Team
 ---
-- Flor Gordivas
-- Joel Marquez
-- Jose Nunez
-- Vincent Mahathirash
+- Flor Gordivas(florangelica)
+- Joel Marquez(joelhmarquez)
+- Jose Nunez(TruSuh)
+- Vincent Mahathirash(SirUsername)
 
 #### Vision
 ---
@@ -15,7 +15,7 @@ A smarter degree auditing system built by students, for students.
 
 #### What is it?
 ---
-flow is an improved 
+Flow is a new and improved way for students to audit their degrees. The user will be presented with a flowchart-like visual composed of all the requirements that their degree demands and have a way of tracking which classes they've completed and which still remain. 
 
 #### Motivation
 ---
@@ -23,6 +23,8 @@ Adding classes through myCUinfo is clunky. It is difficult to visualize what you
 
 #### Risks
 ---
+*New languages: JavaScript, HTML, CSS
+*Time constraint
 
 #### Requirements
 ---
@@ -33,7 +35,9 @@ Adding classes through myCUinfo is clunky. It is difficult to visualize what you
 #### Methodology
 ---
 
+
 #### Project Tracking Software
 ---
+Github Issues & Milestones
 
 #### Project Plan
