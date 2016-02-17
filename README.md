@@ -39,9 +39,11 @@ The current degree audit is visually unappealing and difficult to navigate. We b
 5. As a developer, I would like to have a database filled with all the user major requirements
 6. As a developer, I would like to display a flowchart composed of all the requirements that the user's major demands to allow the user to get a visual representation 
 7. As a developer, I would like to implement a functionality that will allow the user to distinguish completed courses and remaining requirements
+
 ##### Non-Functional Requirements
 8. As a developer, I would like to keep login information secure to protect the user
 9. As a developer, 
+
 #### Methodology
 ---
 Mash-up of Iterfall and Agile
