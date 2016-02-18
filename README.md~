@@ -19,25 +19,41 @@ Flow is a new and improved way for students to audit their degrees. The user wil
 
 #### Motivation
 ---
-Adding classes through myCUinfo is clunky. It is difficult to visualize what you schedule will look like (i.e., where your classes are and whether or not you will have time to move from class to class, where are there gaps in between classes, seeing when classes will cause scheduling conflicts, etc.). The degree audit through DARSweb is only in text, and it can sometimes be cumbersome to see 
+The current degree audit is visually unappealing and difficult to navigate. We believe that having a tool that allows students to get a clearer picture of what courses they still need to take will in turn allow them to better set up they're future schedules.
 
 #### Risks
 ---
 1. New languages: JavaScript, HTML, CSS
 2. Time constraint
+3. No prior experience with web design
 
 #### Requirements
 ---
 ##### User Requirements
+1. As a student, I would like to see my future classes to better plan for the future. Sizing Value: 
+2. As a student, I would like to see my options more visually in order to get a clear picture of what courses i still need to complete Sizing Value: 
+3. As a student, I would like my own profile to keep track of my progress so that I can revisit my audit
+4. As a student, I would like to have control over the color, font, size of the flowchart to have a more personalized experience 
+
 ##### Functional Requirements
+5. As a developer, I would like to store user login information to allow a save functionality 
+6. As a developer, I would like to have a database filled with all the user major requirements
+7. As a developer, I would like to display a flowchart composed of all the requirements that the user's major demands to allow the user to get a visual representation 
+8. As a developer, I would like to implement a functionality that will allow the user to distinguish completed courses and remaining requirements
+
 ##### Non-Functional Requirements
+9. As a developer, I would like to keep login information secure to protect the user
+10. As a developer, I would like to create code that is optimized to allow the user to navigate our site at fast speeds
+11. As a developer, I would like to have our site be mobile compatible to allow the user access from many devices.
 
 #### Methodology
 ---
-Mash-up of Iterfall and Agile
+We will be following the Agile methodology. 
 
 #### Project Tracking Software
 ---
-Github Issues & Milestones
+Trello.
+We will use Gitlo to sync our Trello cards with our github repo.
+
 
 #### Project Plan

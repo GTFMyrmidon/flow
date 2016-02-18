@@ -30,26 +30,30 @@ The current degree audit is visually unappealing and difficult to navigate. We b
 #### Requirements
 ---
 ##### User Requirements
-1. As a student, I would like to see my future classes to better plan for the future.
-2. As a student, I would like to see my options more visually in order to get a clear picture of what courses i still need to complete
-3. As a student, I would like my own profile to keep track of my progress so that I can revisit my audit 
+1. As a student, I would like to see my future classes to better plan for the future. Sizing Value: 
+2. As a student, I would like to see my options more visually in order to get a clear picture of what courses i still need to complete. Sizing Value: 
+3. As a student, I would like my own profile to keep track of my progress so that I can revisit my audit. Sizing Value:
+4. As a student, I would like to have control over the color, font, size of the flowchart to have a more personalized experience. Sizing Value: 
 
 ##### Functional Requirements
-4. As a developer, I would like to store user login information to allow a save functionality 
-5. As a developer, I would like to have a database filled with all the user major requirements
-6. As a developer, I would like to display a flowchart composed of all the requirements that the user's major demands to allow the user to get a visual representation 
-7. As a developer, I would like to implement a functionality that will allow the user to distinguish completed courses and remaining requirements
+5. As a developer, I would like to store user login information to allow a save functionality. Sizing Value: 
+6. As a developer, I would like to have a database filled with all the user major requirements. Sizing Value:
+7. As a developer, I would like to display a flowchart composed of all the requirements that the user's major demands to allow the user to get a visual representation. Sizing Value:
+8. As a developer, I would like to implement a functionality that will allow the user to distinguish completed courses and remaining requirements. Sizing Value:
 
 ##### Non-Functional Requirements
-8. As a developer, I would like to keep login information secure to protect the user
-9. As a developer, 
+9. As a developer, I would like to keep login information secure to protect the user. Sizing Value:
+10. As a developer, I would like to create code that is optimized to allow the user to navigate our site at fast speeds. Sizing Value:
+11. As a developer, I would like to have our site be mobile compatible to allow the user access from many devices. Sizing Value:
 
 #### Methodology
 ---
-Mash-up of Iterfall and Agile
+We will be following the Agile methodology. 
 
 #### Project Tracking Software
 ---
-Trello
+Trello.
+We will use Gitlo to sync our Trello cards with our github repo.
+
 
 #### Project Plan
