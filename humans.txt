@@ -3,13 +3,16 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Flor Gordivas -- Super Human
+    Jose Nunez -- Backend Developer
+    Joel Marquez -- Full Stack Developer
+    Vincent Mahathirash -- Frontend Developer
 
 # THANKS
 
-    <name>
+    University of Colorado Boulder
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    CSS3, HTML5, Javascript
+    Apache Server Configs, jQuery, Modernizr, Normalize.css, Bootstrap
