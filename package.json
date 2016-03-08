@@ -1,0 +1,26 @@
+{
+  "name": "flowauth",
+  "version": "1.0.0",
+  "description": "The authorization app for our flow website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Marquez",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "~0.8.1",
+    "body-parser": "latest",
+    "connect-flash": "~0.1.1",
+    "connect-mongo": "^1.1.0",
+    "cookie-parser": "latest",
+    "ejs": "latest",
+    "express": "~4.12.3",
+    "express-session": "latest",
+    "mongoose": "latest",
+    "morgan": "~1.5.2",
+    "passport": "~0.2.1",
+    "passport-local": "~1.0.0",
+    "validator": "^5.1.0"
+  }
+}
