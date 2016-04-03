@@ -9,18 +9,16 @@
   "author": "Joel Marquez",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "~0.8.1",
-    "body-parser": "latest",
-    "connect-flash": "~0.1.1",
-    "connect-mongo": "^1.1.0",
-    "cookie-parser": "latest",
-    "ejs": "latest",
     "express": "~4.12.3",
+    "morgan": "~1.5.2",
+    "cookie-parser": "latest",
     "express-session": "latest",
     "mongoose": "latest",
-    "morgan": "~1.5.2",
+    "ejs": "latest",
+    "body-parser": "latest",
     "passport": "~0.2.1",
     "passport-local": "~1.0.0",
-    "validator": "^5.1.0"
+    "connect-flash": "~0.1.1",
+    "bcrypt": "~0.8.1"
   }
 }

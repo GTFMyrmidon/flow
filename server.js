@@ -12,14 +12,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var MongoStore   = require('connect-mongo')(session);
-var validator	 = require('validator');
 
 var configDB = require('./config/database.js');
 
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
-
-validator.isEmail('foo@bar.com');
 
 require('./config/passport')(passport); // pass passport for configuration
 
