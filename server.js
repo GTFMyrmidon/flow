@@ -2,7 +2,8 @@
 // get all the tools we need
 var express  = require('express');
 var app      = express();
-var port     = process.env.PORT || 8080;
+app.set('port', (process.env.PORT || 5000));
+
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -49,5 +50,6 @@ require('./app/routes/secure.js')(secure,passport);
 app.use('/', secure);
 
 //Start server =================================================================
-app.listen(port);
-console.log('Server running on port: ' + port);
+app.listen(app.get('port'), function() {
+	console.log('Server running on port: ', app.get('port'));
+});

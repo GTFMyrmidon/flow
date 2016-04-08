@@ -1,0 +1,6 @@
+{
+  "name": "Flow nodejs",
+  "description": "Flow",
+  "repository": "https://github.com/SirUsername/flow.git",
+  "keywords": ["node", "express", "static"]
+}
