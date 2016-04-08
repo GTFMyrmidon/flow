@@ -2,6 +2,8 @@
 
 // set up ======================================================================
 // get all the tools we need
+/* jslint node:true */
+
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 8080;
@@ -19,7 +21,7 @@ var session      = require('client-sessions');
 var configDB = require('./config/database.js');
 
 // configuration ===============================================================
-mongoose.connect('mongodb://localhost/Users') // Connect to local MongoDB database
+mongoose.connect('mongodb://localhost/Users'); // Connect to local MongoDB database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -31,7 +33,7 @@ app.use(bodyParser()); // get information from html forms
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
-app.use(((session
+app.use(session({
   cookieName: 'session',
   secret: 'ilovescotchscotchyscotchscotch',
   duration: 30 * 60 * 1000,
@@ -39,7 +41,7 @@ app.use(((session
   httpOnly: true,
   secure: true,
   ephemeral: true
-)));
+}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
