@@ -1,0 +1,15 @@
+{
+  "name": "flow",
+  "description": "Visual Degree Audit",
+  "main": "",
+  "authors": [
+    "Joel Marquez"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SirUsername/flow",
+  "dependencies": {
+    "angular": "angularjs#^1.5.5",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.1"
+  }
+}

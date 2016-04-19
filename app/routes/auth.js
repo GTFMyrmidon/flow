@@ -8,7 +8,7 @@ module.exports = function(router, passport){
 
 	//localhost:8080/auth/signup
 	router.get('/signup', function(req, res){
-		res.render('signup.ejs', { message: req.flash('signupMessage') });
+		res.render('auth/signup.ejs', { message: req.flash('signupMessage') });
 	});
 
 	//if they sign-up
