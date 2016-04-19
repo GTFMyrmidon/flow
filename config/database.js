@@ -1,3 +1,3 @@
 module.exports = {
-	'url'	: 'mongodb://localhost/tutorialdb'
+	'url'	: 'mongodb://localhost/flow'
 }
