@@ -1,35 +1,78 @@
-<div class = "container">	
+<div class="container">	
 	<div class="row">
-		<!-- Foundation Checklist -->
-		<div ng-controller="foundationController">
-			<div class="col-xs-12 col-sm-6">
-				<h3>Foundation Courses</h3>
-				<div class="well">
-				<label ng-repeat="sec in courses">
-						<input type="checkbox" ng-checked="isChecked(course)" checklist-model="course.courses" checklist-value="sec.id"> {{sec.text}} 
-				</label>
-				</div>
-				<button ng-click="checkAll()">Check All</button>
-				<button ng-click="uncheckAll()">Uncheck All</button>
-				<br><br>
-				courses {{ course.courses | json }}
-			</div>
-		</div>
-
+		
 		<!-- Core Checklist -->
 		<div ng-controller="coreController">
 			<div class="col-xs-12 col-sm-6">
-				<h3>Core Courses</h3>
+				<h4>Core</h4>
 				<div class="well">
-				<label ng-repeat="sec in courses">
-						<input type="checkbox" ng-checked="isChecked(course)" checklist-model="course.courses" checklist-value="sec.id"> {{sec.text}} 
-				</label>
-				</div>
-				<button ng-click="checkAll()">Check All</button>
-				<button ng-click="uncheckAll()">Uncheck All</button>
-				<br><br>
-				courses {{ course.courses | json }}
+					<div ng-repeat="sec in courses">
+						<label>
+								<input type="checkbox" ng-checked="isChecked(course)" checklist-model="course.courses" checklist-value="sec.id"> {{sec.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkAll()">Check All</button>
+						<button ng-click="uncheckAll()">Uncheck All</button>
+					</div>
 			</div>
 		</div>
+		<!-- Foundation Checklist -->
+		<div ng-controller="foundationController">
+			<div class="col-xs-12 col-sm-6">
+				<h4>Foundation</h4>
+				<div class="well">
+					<div ng-repeat="sec in courses">
+						<label>
+								<input type="checkbox" ng-checked="isChecked(course)" checklist-model="course.courses" checklist-value="sec.id"> {{sec.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkAll()">Check All</button>
+						<button ng-click="uncheckAll()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+		<!-- Electives Checklist -->
+		<div ng-controller="electivesController">
+			<div class="col-xs-12 col-sm-6">
+				<h4>Electives</h4>
+				<div class="well">
+					<div ng-repeat="sec in courses">
+						<label>
+								<input type="checkbox" ng-checked="isChecked(course)" checklist-model="course.courses" checklist-value="sec.id"> {{sec.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkAll()">Check All</button>
+						<button ng-click="uncheckAll()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+		<!-- Capstone Checklist -->
+		<div ng-controller="capstoneController">
+			<div class="col-xs-12 col-sm-6">
+				<h4>Senior Capstone</h4>
+				<div class="well">
+					<div ng-repeat="sec in courses">
+						<label>
+								<input type="checkbox" ng-checked="isChecked(course)" checklist-model="course.courses" checklist-value="sec.id"> {{sec.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkAll()">Check All</button>
+						<button ng-click="uncheckAll()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+
+		
+	
+
+
+
+
+
+
+
+
+
+
 	</div>
 </div>
