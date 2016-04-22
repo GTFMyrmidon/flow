@@ -1,6 +1,8 @@
 /* controller for foundation section */
-myApp.controller('foundationController', function($scope){
-	$scope.courses = [
+myApp.controller('coursesController',function($scope){
+	
+	/* Foundation Classes */
+	$scope.foundation = [
 		{id: 1000, text: 'Computer Science as a Field of Work and Study'},
 		{id: 1300, text: 'Computer Science 1: Starting Computing'},
 		{id: 2270, text: 'Computer Science 2: Data Structures'},
@@ -9,22 +11,9 @@ myApp.controller('foundationController', function($scope){
 		{id: 3155, text: 'Principles of Programming Languages'},
 		{id: 3308, text: 'Software Development Methods and Tools'}
 	];
-	$scope.course = {
-		courses: []
-	};
-	
-	$scope.checkAll = function(){
-		$scope.course.courses = $scope.courses.map(function(item) { return item.id; });
 
-	};
-	$scope.uncheckAll = function(){
-		$scope.course.courses = [];
-	};
-});
-
-/* Controller for Core Section */
-myApp.controller('coreController', function($scope){
-	$scope.courses = [
+	/* Core Classes */
+	$scope.core = [
 		{id: 3002, text: 'Human-Centered Computing Foundations'},
 		{id: 3202, text: 'Introduction to Artificial Intelligence'},
 		{id: 3287, text: 'Database and Information Systems'},
@@ -53,65 +42,26 @@ myApp.controller('coreController', function($scope){
 		{id: 4613, text: 'Embedded System Design'},
 		{id: 5833, text: 'Spec Tpcs: Unix System Administration'}
 	];
-	$scope.course = {
-		courses: []
-	};
-	
-	$scope.checkAll = function(){
-		$scope.course.courses = $scope.courses.map(function(item) { return item.id; });
 
-	};
-	$scope.uncheckAll = function(){
-		$scope.course.courses = [];
-	};
-});
-
-/* Controller for Electives Section */
-myApp.controller('electivesController', function($scope){
-	$scope.courses = [
+	/* Elective Classes */
+	$scope.electives = [
 		{id: 3112, text: 'Human-Centered Computing Professional Development'},
 		{id: 4830, text: 'Special Topics in Computer Science'},
 		{id: 4900, text: 'Upper Division, Undergraduate level Independent Study'},
 		{id: 4120, text: 'Introduction to Operations Research'}
 	];
-	$scope.course = {
-		courses: []
-	};
-	
-	$scope.checkAll = function(){
-		$scope.course.courses = $scope.courses.map(function(item) { return item.id; });
 
-	};
-	$scope.uncheckAll = function(){
-		$scope.course.courses = [];
-	};
-});
-
-/* Controller for Senior Capstone Section */
-myApp.controller('capstoneController', function($scope){
-	$scope.courses = [
+	/* Capstone Classes */
+	$scope.capstone = [
 		{id: 4308, text: 'Human-Centered Computing Professional Development'},
 		{id: 4318, text: 'Special Topics in Computer Science'},
 		{id: 4348, text: 'Upper Division, Undergraduate level Independent Study'},
 		{id: 4830, text: 'Introduction to Operations Research'},
 		{id: 4950, text: 'Senior Thesis'}
 	];
-	$scope.course = {
-		courses: []
-	};
-	
-	$scope.checkAll = function(){
-		$scope.course.courses = $scope.courses.map(function(item) { return item.id; });
 
-	};
-	$scope.uncheckAll = function(){
-		$scope.course.courses = [];
-	};
-});
-
-/* Controller for Mathematics Section */
-myApp.controller('mathController', function($scope){
-	$scope.courses = [
+	/* Math Classes */
+	$scope.math = [
 		{id: 1350, text: 'Calculus 1 for Engineers'},
 		{id: 1360, text: 'Calculus 2 for Engineers'},
 		{id: 2820, text: 'Linear Algebra with CS Applications'},
@@ -130,22 +80,9 @@ myApp.controller('mathController', function($scope){
 		{id: 2703, text: 'Discrete Mathematics for Computer Engineers'},
 		{id: 3170, text: 'Discrete Applied Mathematics'}
 	];
-	$scope.course = {
-		courses: []
-	};
-	
-	$scope.checkAll = function(){
-		$scope.course.courses = $scope.courses.map(function(item) { return item.id; });
 
-	};
-	$scope.uncheckAll = function(){
-		$scope.course.courses = [];
-	};
-});
-
-/* Controller for Natural Science Section */
-myApp.controller('scienceController', function($scope){
-	$scope.courses = [
+	/* Science classes */
+	$scope.science = [
 		{id: 1110, text: 'General Physics 1'},
 		{id: 1120, text: 'General Physics 2'},
 		{id: 1140, text: 'Experimental Physics'},
@@ -172,15 +109,61 @@ myApp.controller('scienceController', function($scope){
 		{id: 1150, text: 'Introduction to Cellular and Molecular Biology'},
 		{id: 2012, text: 'Biological Psychology'}
 	];
-	$scope.course = {
-		courses: []
+
+	$scope.courses = {
+		foundation: [1000,1300],
+		core: [],
+		electives: [],
+		capstone: [],
+		math: [],
+		science: [],
 	};
 	
-	$scope.checkAll = function(){
-		$scope.course.courses = $scope.courses.map(function(item) { return item.id; });
+	$scope.checkFoundation = function(){
+		$scope.courses.foundation = $scope.foundation.map(function(item) { return item.id; });
 
 	};
-	$scope.uncheckAll = function(){
-		$scope.course.courses = [];
+	$scope.uncheckFoundation = function(){
+		$scope.courses.foundation = [];
+	};
+
+	$scope.checkCore = function(){
+		$scope.courses.core = $scope.core.map(function(item) { return item.id; });
+
+	};
+	$scope.uncheckCore = function(){
+		$scope.courses.core = [];
+	};
+
+	$scope.checkElectives = function(){
+		$scope.courses.electives = $scope.electives.map(function(item) { return item.id; });
+
+	};
+	$scope.uncheckElectives = function(){
+		$scope.courses.electives = [];
+	};
+
+	$scope.checkCapstone = function(){
+		$scope.courses.capstone = $scope.capstone.map(function(item) { return item.id; });
+
+	};
+	$scope.uncheckCapstone = function(){
+		$scope.courses.capstone = [];
+	};
+
+	$scope.checkMath = function(){
+		$scope.courses.math = $scope.math.map(function(item) { return item.id; });
+
+	};
+	$scope.uncheckMath = function(){
+		$scope.courses.math = [];
+	};
+
+	$scope.checkScience = function(){
+		$scope.courses.science = $scope.science.map(function(item) { return item.id; });
+
+	};
+	$scope.uncheckScience = function(){
+		$scope.courses.science = [];
 	};
 });

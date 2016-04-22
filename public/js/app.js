@@ -1,7 +1,7 @@
-var myApp = angular.module('myApp', ['checklist-model','ngRoute']).
+var myApp = angular.module('myApp', ['checklist-model','ngRoute', 'ngResource', 'LocalStorageModule']).
 	config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider.when('/home', {templateUrl: '../public/partials/homepage.html'});
-		$routeProvider.when('/courses', {templateUrl: '../public/partials/courses.html'});
+		$routeProvider.when('/courses', {templateUrl: '../public/partials/courses.html', controller: 'coursesController'});
 		$routeProvider.when('/foundation', {templateUrl: '../public/partials/foundation.html'});
 		$routeProvider.when('/core', {templateUrl: '../public/partials/core.html'});
 		$routeProvider.when('/capstone', {templateUrl: '../public/partials/capstone.html'});

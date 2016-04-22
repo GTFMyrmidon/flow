@@ -25,6 +25,7 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({extended: false})); // get information from html forms
+app.use(bodyParser.json());
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
@@ -49,6 +50,10 @@ app.use(function(req, res, next){
 var auth = express.Router();
 require('./app/routes/auth.js')(auth, passport);
 app.use('/auth', auth);
+
+var api = express.Router();
+require('./app/routes/api.js')(api, passport);
+app.use('/api', api);
 
 var secure = express.Router();
 require('./app/routes/secure.js')(secure,passport);
