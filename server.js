@@ -51,10 +51,6 @@ var auth = express.Router();
 require('./app/routes/auth.js')(auth, passport);
 app.use('/auth', auth);
 
-var api = express.Router();
-require('./app/routes/api.js')(api, passport);
-app.use('/api', api);
-
 var secure = express.Router();
 require('./app/routes/secure.js')(secure,passport);
 app.use('/', secure);

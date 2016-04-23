@@ -1,6 +1,14 @@
 /* controller for foundation section */
-myApp.controller('coursesController',function($scope){
-	
+myApp.controller('coursesController',function($scope, $http, $window){
+
+	$http.get('/selected').success(function(response){
+		$scope.courses.foundation = response.local.foundation;
+		$scope.courses.core = response.local.core;
+		$scope.courses.electives = response.local.electives;
+		$scope.courses.capstone = response.local.capstone;
+		$scope.courses.math = response.local.math;
+		$scope.courses.science = response.local.science;
+	});
 	/* Foundation Classes */
 	$scope.foundation = [
 		{id: 1000, text: 'Computer Science as a Field of Work and Study'},
@@ -111,13 +119,22 @@ myApp.controller('coursesController',function($scope){
 	];
 
 	$scope.courses = {
-		foundation: [1000,1300],
+		foundation: [],
 		core: [],
 		electives: [],
 		capstone: [],
 		math: [],
 		science: [],
 	};
+
+	$scope.fills = [
+	{
+		fill: '#30FF7C'
+	},
+	{
+		fill: '#FC8B8B'
+	}
+	];
 	
 	$scope.checkFoundation = function(){
 		$scope.courses.foundation = $scope.foundation.map(function(item) { return item.id; });
@@ -165,5 +182,11 @@ myApp.controller('coursesController',function($scope){
 	};
 	$scope.uncheckScience = function(){
 		$scope.courses.science = [];
+	};
+
+	$scope.save = function() {
+	 	$http.put('/selected', $scope.courses).success(function(response){
+	 		$window.location.reload();
+	 	});
 	};
 });

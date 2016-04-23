@@ -1,3 +1,4 @@
+var User = require('../models/user');
 module.exports = function(router, passport){
 
 	router.use(function(req, res, next){
@@ -6,6 +7,22 @@ module.exports = function(router, passport){
 		}
 		res.redirect('/auth');
 	});
+
+
+	router.get('/selected', function(req, res){
+		User.findOne({username: req.user.username}, function (err, docs){
+			res.json(docs);
+		});
+	});
+
+	router.put('/selected', function(req, res){
+		User.findOneAndUpdate({username: req.user.username}, {'$addToSet': {'local.foundation': { '$each': req.body.foundation}, 'local.core': { '$each': req.body.core}, 'local.electives': { '$each': req.body.electives}, 'local.capstone': { '$each': req.body.capstone}, 'local.math': { '$each': req.body.math}, 'local.science': { '$each': req.body.science}}}, {safe: true, new: true}, function (err, docs){
+			if(err){
+				console.log("Something went wrong!");
+			};
+			res.json(docs);
+		});
+	});	
 
 	/* localhost:8080/home */
 	router.get('/home', function(req, res){
