@@ -7,6 +7,9 @@
 .checked {
   fill: #30FF7C;
 }
+.unchecked {
+  fill: #FF5E5E;
+}
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -5147,7 +5150,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #337ab7;
+  background-color: #30FF7C;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
           box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
   -webkit-transition: width .6s ease;

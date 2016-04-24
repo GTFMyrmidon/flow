@@ -195,4 +195,26 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	 		$window.location.reload();
 	 	});
 	};
+
+	/* Progress Bars */
+	$scope.percentFoundation = function() {
+		return (((($scope.courses.foundation.length)/7) * 100).toFixed(2));
+	};
+	$scope.percentCore = function() {
+		return (((($scope.courses.core.length)/6) * 100).toFixed(2));
+	};
+	$scope.percentElectives = function() {
+		return (((($scope.courses.electives.length)/4) * 100).toFixed(2));
+	};
+	$scope.percentCapstone = function() {
+		return (((($scope.courses.capstone.length)/2) * 100).toFixed(2));
+	};
+	$scope.percentMath = function() {
+		return (((($scope.courses.math.length)/5) * 100).toFixed(2));
+	};
+	$scope.percentScience = function() {
+		return (((($scope.courses.science.length)/5) * 100).toFixed(2));
+	};
+
+
 });

@@ -16,7 +16,7 @@ module.exports = function(router, passport){
 	});
 
 	router.put('/selected/reset', function(req, res){
-		User.findOneAndUpdate({_id: req.user._id}, {'$set': {'local.foundation': [] }} ,function (err, docs){
+		User.findOneAndUpdate({_id: req.user._id}, {'$set': {'local.foundation': [], 'local.core': [], 'local.electives': [], 'local.capstone': [], 'local.math': [], 'local.science': []}} ,function (err, docs){
 			if(err){
 				console.log(err);
 			};
