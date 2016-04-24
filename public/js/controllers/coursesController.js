@@ -189,4 +189,10 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	 		$window.location.reload();
 	 	});
 	};
+
+	$scope.reset = function() {
+	 	$http.put('/selected/reset').success(function(response){
+	 		$window.location.reload();
+	 	});
+	};
 });

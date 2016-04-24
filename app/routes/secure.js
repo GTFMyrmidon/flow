@@ -15,6 +15,15 @@ module.exports = function(router, passport){
 		});
 	});
 
+	router.put('/selected/reset', function(req, res){
+		User.findOneAndUpdate({_id: req.user._id}, {'$set': {'local.foundation': [] }} ,function (err, docs){
+			if(err){
+				console.log(err);
+			};
+			res.json(docs);
+		});
+	});	
+
 	router.put('/selected', function(req, res){
 		User.findOneAndUpdate({_id: req.user._id}, {'$addToSet': {'local.foundation': { '$each': req.body.foundation}, 'local.core': { '$each': req.body.core}, 'local.electives': { '$each': req.body.electives}, 'local.capstone': { '$each': req.body.capstone}, 'local.math': { '$each': req.body.math}, 'local.science': { '$each': req.body.science}}}, {safe: true, new: true}, function (err, docs){
 			if(err){
