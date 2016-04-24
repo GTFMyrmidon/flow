@@ -10,13 +10,13 @@ module.exports = function(router, passport){
 
 
 	router.get('/selected', function(req, res){
-		User.findOne({username: req.user.username}, function (err, docs){
+		User.findOne({_id: req.user._id}, function (err, docs){
 			res.json(docs);
 		});
 	});
 
 	router.put('/selected', function(req, res){
-		User.findOneAndUpdate({username: req.user.username}, {'$addToSet': {'local.foundation': { '$each': req.body.foundation}, 'local.core': { '$each': req.body.core}, 'local.electives': { '$each': req.body.electives}, 'local.capstone': { '$each': req.body.capstone}, 'local.math': { '$each': req.body.math}, 'local.science': { '$each': req.body.science}}}, {safe: true, new: true}, function (err, docs){
+		User.findOneAndUpdate({_id: req.user._id}, {'$addToSet': {'local.foundation': { '$each': req.body.foundation}, 'local.core': { '$each': req.body.core}, 'local.electives': { '$each': req.body.electives}, 'local.capstone': { '$each': req.body.capstone}, 'local.math': { '$each': req.body.math}, 'local.science': { '$each': req.body.science}}}, {safe: true, new: true}, function (err, docs){
 			if(err){
 				console.log("Something went wrong!");
 			};

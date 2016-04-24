@@ -32,13 +32,13 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body background="../public/img/img_1431.jpg">
 
     <div class="container">
 
       <!-- Static navbar -->
       <nav class="navbar navbar-default" ng-controller="navController">
-        <div class="container-fluid">
+        <div class="container-fluid" style="background-color: lightgray;">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -76,9 +76,9 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
-      <div ng-view></div>
-
+      <section class="col-md-12">
+        <div ng-view></div>
+      </section>
     <!-- Scripts
     ================================================== -->
       <script type="text/javascript" src="../public/libs/jquery/dist/jquery.js"></script>
