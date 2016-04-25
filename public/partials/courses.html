@@ -1,0 +1,110 @@
+<!-- Submit Button -->
+<div>
+	<button type="submit" class="btn btn-success" ng-click="reset(); save()" style="float: right">Save</button>
+</div><br><br>
+
+<div>	
+	<div class="row col-md-12">
+		
+		<!-- Core Checklist -->
+		<div>
+			<div class="col-xs-12 col-sm-6">
+				<h4>Core</h4>
+				<div class="well" style="background-color: lightgray;">
+					<div ng-repeat="course in core">
+						<label>
+								<input type="checkbox" checklist-model="courses.core" checklist-value="course.id"> {{course.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkCore()">Check All</button>
+						<button ng-click="uncheckCore()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+		<!-- Foundation Checklist -->
+		<div>
+			<div class="col-xs-12 col-sm-6">
+				<h4>Foundation</h4>
+				<div class="well" style="background-color: lightgray;">
+					<div ng-repeat="course in foundation">
+						<label>
+								<input type="checkbox" checklist-model="courses.foundation" checklist-value="course.id"> {{course.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkFoundation()">Check All</button>
+						<button ng-click="uncheckFoundation()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+		<!-- Electives Checklist -->
+		<div>
+			<div class="col-xs-12 col-sm-6">
+				<h4>Electives</h4>
+				<div class="well" style="background-color: lightgray;">
+					<div ng-repeat="course in electives">
+						<label>
+								<input type="checkbox" checklist-model="courses.electives" checklist-value="course.id"> {{course.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkElectives()">Check All</button>
+						<button ng-click="uncheckElectives()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+		<!-- Capstone Checklist -->
+		<div>
+			<div class="col-xs-12 col-sm-6">
+				<h4>Senior Capstone</h4>
+				<div class="well" style="background-color: lightgray;">
+					<div ng-repeat="course in capstone">
+						<label>
+								<input type="checkbox" checklist-model="courses.capstone" checklist-value="course.id"> {{course.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkCapstone()">Check All</button>
+						<button ng-click="uncheckCapstone()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+
+		<!-- Math Checklist -->
+		<div>
+			<div class="col-xs-12 col-sm-6 pull-right">
+				<h4>Math</h4>
+				<div class="well" style="background-color: lightgray;">
+					<div ng-repeat="course in math">
+						<label>
+								<input type="checkbox" checklist-model="courses.math" checklist-value="course.id"> {{course.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkMath()">Check All</button>
+						<button ng-click="uncheckMath()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+
+		<!-- Science Checklist -->
+		<div>
+			<div class="col-xs-12 col-sm-6">
+				<h4>Natural Sciences</h4>
+				<div class="well" style="background-color: lightgray;">
+					<div ng-repeat="course in science">
+						<label>
+								<input type="checkbox" checklist-model="courses.science" checklist-value="course.id"> {{course.text}} 
+						</label>
+						</div><br>
+						<button ng-click="checkScience()">Check All</button>
+						<button ng-click="uncheckScience()">Uncheck All</button>
+					</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+	</div>
+</div>

@@ -2,7 +2,7 @@
 // get all the tools we need
 var express  = require('express');
 var app      = express();
-app.set('port', (process.env.PORT || 5000));
+var port 	 = process.env.PORT || 8080;
 
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -25,6 +25,7 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({extended: false})); // get information from html forms
+app.use(bodyParser.json());
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
@@ -39,6 +40,11 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use(express.static(__dirname, 'public'));
 
+app.use(function(req, res, next){
+	console.log("" + req.user);
+	next();
+});
+
 // Routes ======================================================================
 
 var auth = express.Router();
@@ -50,6 +56,5 @@ require('./app/routes/secure.js')(secure,passport);
 app.use('/', secure);
 
 //Start server =================================================================
-app.listen(app.get('port'), function() {
-	console.log('Server running on port: ', app.get('port'));
-});
+app.listen(port);
+console.log('Server running on port: ' + port);
