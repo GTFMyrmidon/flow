@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head class="container">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>New page</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body class="contain">
+        <button type="button" onclick="dropDown()" class=" tn btn-default but1">Pick Core</button>
+        <button type="button" onclick="alert('')" class=" tn btn-default but1">Pick Core</button>
+        <button type="button" expandselect("select_box") toggle select box class="btn btn-default but1">Pick Core
+</button>
+        <button type="button" class="btn btn-default but1">Pick Core</button>
+        <ul id="dropdown">
+            <li>
+                <a href="google.com">Option 1</a>
+            </li>
+            <li>
+                <a href="google.com">Option 2</a>
+            </li>
+            <li>
+                <a href="google.com">Option 3</a>
+            </li>
+            <li>
+                <a href="google.com">Option 4</a>
+            </li>
+        </ul>         
+        <div id="container">
+            <select name="select_box" id="select_box">
+                <option value="">Select</option>
+                <option value="">option1</option>
+                <option value="">option2</option>
+                <option value="">option3</option>
+                <option value="">option4</option>
+                <option value="">option5</option>
+                <option value="">option6</option>
+            </select>
+            <input type="hidden" name="select_flag" id="select_flag" value="0">
+        </div>
+        <div id="container">
+            <select name="select_box" id="select_box">
+                <option value="">Select</option>
+                <option value="">option1</option>
+                <option value="">option2</option>
+                <option value="">option3</option>
+                <option value="">option4</option>
+                <option value="">option5</option>
+                <option value="">option6</option>
+            </select>
+            <input type="hidden" name="select_flag" id="select_flag" value="0">
+        </div>
+        <p>Click on one of the text labels to toggle the related control:</p>
+        <form action="demo_form.asp">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <br>
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <br>
+            <label for="other">Other</label>
+            <input type="radio" name="gender" id="other" value="other">
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <form action="demo_form.asp" method="get">
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+
+                <option value="Firefox">
+
+                <option value="Chrome">
+
+                <option value="Opera">
+
+                <option value="Safari">
+            </datalist>
+            <input type="submit">
+        </form>
+        <p><strong>Note:</strong> The datalist tag is not supported in Internet Explorer 9 and earlier versions, or in Safari.</p> 
+    </body>
+</html>
