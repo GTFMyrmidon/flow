@@ -1,0 +1,6 @@
+{
+  "name": "Flow",
+  "description": "A visual computer science degree audit",
+  "repository": "https://github.com/SirUsername/flow.git",
+  "keywords": ["node", "express", "angular", "MEAN", "mongodb", "REST", "API"]
+}
