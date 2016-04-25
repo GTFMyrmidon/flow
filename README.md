@@ -11,7 +11,7 @@ A smarter degree auditing system.
 
 #### Vision
 ---
-A smarter degree auditing system built by students, for students.
+A smarter degree auditing system, created by students for students.
 
 #### What is it?
 ---
