@@ -198,21 +198,41 @@ myApp.controller('coursesController',function($scope, $http, $window){
 
 	/* Progress Bars */
 	$scope.percentFoundation = function() {
-		return (((($scope.courses.foundation.length)/7) * 100).toFixed(2));
+		return (((($scope.courses.foundation.length)/7) * 100).toFixed(0));
 	};
 	$scope.percentCore = function() {
-		return (((($scope.courses.core.length)/6) * 100).toFixed(2));
+		var percent;
+		if(($scope.courses.core.length < 6)){
+			percent = (((($scope.courses.core.length)/6) * 100).toFixed(0));
+			return percent;
+		};
+		return 100;
 	};
 	$scope.percentElectives = function() {
-		return (((($scope.courses.electives.length)/4) * 100).toFixed(2));
+		return (((($scope.courses.electives.length)/4) * 100).toFixed(0));
 	};
 	$scope.percentCapstone = function() {
-		return (((($scope.courses.capstone.length)/2) * 100).toFixed(2));
+		var percent;
+		if(($scope.courses.capstone.length < 2)){
+			percent = (((($scope.courses.capstone.length)/2) * 100).toFixed(0));
+			return percent;
+		};
+		return 100;
 	};
 	$scope.percentMath = function() {
-		return (((($scope.courses.math.length)/5) * 100).toFixed(2));
+		var percent;
+		if(($scope.courses.math.length < 5)){
+			percent = (((($scope.courses.math.length)/5) * 100).toFixed(0));
+			return percent;
+		};
+		return 100;
 	};
 	$scope.percentScience = function() {
-		return (((($scope.courses.science.length)/5) * 100).toFixed(2));
+		var percent;
+		if(($scope.courses.science.length < 5)){
+			percent = (((($scope.courses.science.length)/5) * 100).toFixed(0));
+			return percent;
+		};
+		return 100;
 	};
 });
