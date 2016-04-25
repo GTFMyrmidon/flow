@@ -61,11 +61,11 @@ myApp.controller('coursesController',function($scope, $http, $window){
 
 	/* Capstone Classes */
 	$scope.capstone = [
-		{id: 4308, text: 'Human-Centered Computing Professional Development'},
-		{id: 4318, text: 'Special Topics in Computer Science'},
-		{id: 4348, text: 'Upper Division, Undergraduate level Independent Study'},
-		{id: 4830, text: 'Introduction to Operations Research'},
-		{id: 4950, text: 'Senior Thesis'}
+		{id: 4308, text: 'Software Engineering Project 1'},
+		{id: 4318, text: 'Software Engineering Project 2'},
+		{id: 4348, text: 'Startup Essentials: Entrepreneurial Project 1'},
+		{id: 4830, text: 'Startup Essentials: Entrepreneurial Project 2'},
+		{id: 4950, text: 'Senior Thesis'},
 	];
 
 	/* Math Classes */
@@ -78,7 +78,7 @@ myApp.controller('coursesController',function($scope, $http, $window){
 		{id: 4570, text: 'Statistical Methods'},
 		{id: 3022, text: 'Data Science Algorithms'},
 		{id: 3570, text: 'Applied Probability'},
-		{id: 4520, text: 'Into to Mathematical Statistics'},
+		{id: 4520, text: 'Intro to Mathematical Statistics'},
 		{id: 3227, text: 'Probability, Statistics and Decision'},
 		{id: 3510, text: 'Introduction to Probability and Statistics'},
 		{id: 3810, text: 'Intoduction to Probability Theory'},
@@ -215,6 +215,4 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	$scope.percentScience = function() {
 		return (((($scope.courses.science.length)/5) * 100).toFixed(2));
 	};
-
-
 });
