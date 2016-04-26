@@ -11,7 +11,7 @@ A smarter degree auditing system.
 
 #### Vision
 ---
-A smarter degree auditing system built by students, for students.
+A smarter degree auditing system, created by students for students.
 
 #### What is it?
 ---
@@ -30,20 +30,20 @@ The current degree audit is visually unappealing and difficult to navigate. We b
 #### Requirements
 ---
 ##### User Requirements
-1. As a student, I would like to view a flowchart composed of all the requirements that my major demands to allow me to get a visual representation. Sizing Value: 20
-2. As a student, I would like to see my future classes to better plan for the future. Sizing Value: 5
-3. As a student, I would like my own profile to keep track of my progress so that I can revisit my audit. Sizing Value: 8
-4. As a student, I would like to have control over the color, font, size of the flowchart to have a more personalized experience. Sizing Value: 5
+1. As a student, I would like to view a flowchart composed of all the requirements of  my major, allowing me a visual representation of my progress. Sizing Value: 20
+2. As a student, I would like to see what classes I am able to take, in order to better plan for the future. Sizing Value: 5
+3. As a student, I would like my own personal account to record my progress, thus I can revisit and reexamine my audit. Sizing Value: 8
+4. As a student, I would like to manipulate the color, font, size of the flowchart to personalize the Webpage to my own desire.. Sizing Value: 5
 
 ##### Functional Requirements
-5. As a developer, I would like to store user login information to allow a save functionality. Sizing Value: 8
-6. As a developer, I would like to have a database filled with all the user major requirements. Sizing Value: 8
-7. As a developer, I would like to implement a functionality that will allow the user to distinguish completed courses and remaining requirements. Sizing Value: 3
+5. As a developer,I would like to store a username and password to allow the user to save his/her progress.  Sizing Value: 8
+6. As a developer, I would like to have a customer database, a database filled with required courses to fulfill the degree requirements. Sizing Value: 8
+7. As a developer, I would like to allow the user to distinguish completed courses and available options to fulfill the degree requirements. Sizing Value: 3
 
 ##### Non-Functional Requirements
-8. As a developer, I would like to keep login information secure to protect the user. Sizing Value: 13
-9. As a developer, I would like to create code that is optimized to allow the user to navigate our site at fast speeds. Sizing Value: 8
-10. As a developer, I would like to have our site be mobile compatible to allow the user access from many devices. Sizing Value: 5
+8. As a developer, I would like to have a protection system enacting prevention measures to safeguard login information and user accounts. Sizing Value: 13
+9. As a developer, I would like to develop efficient lines of code to generate a fast and reliable Webpage. Maneuvering through the Webpage should be achieved at high speeds. Sizing Value: 8
+10. As a developer, I would like to have the Webpage be Mobile-Friendly to allow accessibility to accounts separate from Desktop Computers, allowing different types of devices to receive flexible framework. Sizing Value: 5
 
 #### Methodology
 ---
