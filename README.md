@@ -1,6 +1,7 @@
-Flow
+[Flow] (https://flowcu.herokuapp.com)
 ======
 A smarter degree auditing system.
+
 
 #### Team
 ---
