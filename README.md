@@ -49,9 +49,9 @@ The current degree audit is visually unappealing and difficult to navigate. We b
 #### Methodology
 ---
 We will be following the Agile methodology.
-  -NOTE: Agile means that the iterations is key. A time span where we need to work on part of the project and try to complete it. 
-    -NOTE: We began to follow other Methodologies.
-      -Crytals Methods Methodology: This was used for sometime. Because we each excelled in different areas we took that oppurtunity to use our skills in different areas. 
+  - NOTE: Agile means that the iterations is key. A time span where we need to work on part of the project and try to complete it. 
+  - NOTE: We began to follow other Methodologies.
+    - Crytals Methods Methodology: This was used for sometime. Because we each excelled in different areas we took that oppurtunity to use our skills in different areas. 
 #### Project Tracking Software
 ---
 Trello.
