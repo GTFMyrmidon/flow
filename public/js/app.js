@@ -9,7 +9,8 @@ var myApp = angular.module('myApp', ['checklist-model','ngRoute', 'ngResource', 
 		$routeProvider.when('/humanities', {templateUrl: '../public/partials/humanities.html', controller: 'coursesController'});
 		$routeProvider.when('/math', {templateUrl: '../public/partials/math.html', controller: 'coursesController'});
 		$routeProvider.when('/science', {templateUrl: '../public/partials/science.html', controller: 'coursesController'});
-		$routeProvider.when('/auth/logout', {templateUrl: '../views/secure/home.ejs', controller: 'reloadController'});		
+		$routeProvider.when('/auth/logout', {templateUrl: '../views/secure/home.ejs', controller: 'reloadController'});
+		$routeProvider.when('/auth', {templateUrl: '../views/secure/home.ejs', controller: 'reloadController'});		
 		$routeProvider.otherwise({redirectTo: '/home'});
 		$locationProvider.html5Mode({enabled: true, requireBase: false});
 	}]);
