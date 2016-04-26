@@ -224,7 +224,7 @@ a:focus {
     -moz-animation-timing-function: linear;
 }
 
-@-webkit-keyframes pulse {    
+@-webkit-keyframes pulse {
     0% {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -241,7 +241,7 @@ a:focus {
     }
 }
 
-@-moz-keyframes pulse {    
+@-moz-keyframes pulse {
     0% {
         -moz-transform: scale(1);
         transform: scale(1);
@@ -425,7 +425,7 @@ body {
 
 @-webkit-keyframes spin
 {
-    0%   { 
+    0%   {
         -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
         -ms-transform: rotate(0deg);  /* IE 9 */
         transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
@@ -439,7 +439,7 @@ body {
 
 @keyframes spin
 {
-    0%   { 
+    0%   {
         -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
         -ms-transform: rotate(0deg);  /* IE 9 */
         transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
@@ -475,7 +475,7 @@ body {
 {
     -webkit-animation: fadeout;
     opacity: 0;
-    -webkit-transition: all 0.3s ease-out;  
+    -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
 
@@ -486,6 +486,10 @@ body {
     -webkit-animation: fadeout;
     opacity: 0;
 
-    -webkit-transition: all 0.3s 0.25s ease-out;  
+    -webkit-transition: all 0.3s 0.25s ease-out;
     transition: all 0.3s 0.25s ease-out;
+}
+
+li a.cd-signin {
+    color: firebrick;
 }
