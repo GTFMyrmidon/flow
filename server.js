@@ -33,6 +33,11 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(session({ secret: 'csci3308courseproject',
 							saveUninitialized: true,
 							resave: true,
+							duration: 30 * 60 * 1000,
+							activeDuration: 5 * 60 * 1000,
+							httpOnly: true,
+							secure: true,
+							ephemeral: true,
 							store: new MongoStore ({mongooseConnection: mongoose.connection}),
 										ttl: 2 * 24 * 60 * 60})); // session secret
 app.use(passport.initialize());
