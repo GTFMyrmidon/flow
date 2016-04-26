@@ -1,7 +1,25 @@
 /* controller Checklist/Flowchart pages*/
+
+/**
+ *@ngdoc controller
+ *@name myApp.controller:coursesController
+ *@description
+ *
+ * This is the courses controller which we used to store a collection of courses, our checked values, and update checked values 
+**/
+
 myApp.controller('coursesController',function($scope, $http, $window){
 
 	/* Sending a get request to retrived checked values and store them in our local variable */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.service:http
+	 *@description
+	 *
+	 * This is the http get request sent out to our mongo database to load in user saved checked values 
+	**/	
+
 	$http.get('/selected').success(function(response){
 		$scope.courses.foundation = response.local.foundation;
 		$scope.courses.core = response.local.core;
@@ -12,6 +30,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	});
 
 	/* Foundation Classes */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:foundation
+	 *@description
+	 *
+	 * This is the foundation variable storing our foundation requirements
+	**/	
+
 	$scope.foundation = [
 		{id: 1000, text: 'Computer Science as a Field of Work and Study'},
 		{id: 1300, text: 'Computer Science 1: Starting Computing'},
@@ -21,6 +48,14 @@ myApp.controller('coursesController',function($scope, $http, $window){
 		{id: 3155, text: 'Principles of Programming Languages'},
 		{id: 3308, text: 'Software Development Methods and Tools'}
 	];
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:core
+	 *@description
+	 *
+	 * This is the core variable storing our core requirements
+	**/	
 
 	/* Core Classes */
 	$scope.core = [
@@ -54,6 +89,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	];
 
 	/* Elective Classes */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:electives
+	 *@description
+	 *
+	 * This is the electives variable storing our elective requirements
+	**/	
+
 	$scope.electives = [
 		{id: 3112, text: 'Human-Centered Computing Professional Development'},
 		{id: 4830, text: 'Special Topics in Computer Science'},
@@ -62,6 +106,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	];
 
 	/* Capstone Classes */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:capstone
+	 *@description
+	 *
+	 * This is the capstone variable storing our capstone requirements
+	**/	
+
 	$scope.capstone = [
 		{id: 4308, text: 'Software Engineering Project 1'},
 		{id: 4318, text: 'Software Engineering Project 2'},
@@ -71,6 +124,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	];
 
 	/* Math Classes */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:math
+	 *@description
+	 *
+	 * This is the math variable storing our math requirements
+	**/	
+
 	$scope.math = [
 		{id: 1350, text: 'Calculus 1 for Engineers'},
 		{id: 1360, text: 'Calculus 2 for Engineers'},
@@ -92,6 +154,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	];
 
 	/* Science classes */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:science
+	 *@description
+	 *
+	 * This is the science variable storing our science requirements
+	**/	
+
 	$scope.science = [
 		{id: 1110, text: 'General Physics 1'},
 		{id: 1120, text: 'General Physics 2'},
@@ -121,6 +192,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	];
 
 	/* Local array storing checked values for each category */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:courses
+	 *@description
+	 *
+	 * This is the courses variable storing user checked courses
+	**/	
+
 	$scope.courses = {
 		foundation: [],
 		core: [],
@@ -131,12 +211,30 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	};
 	
 	/* Check all button for foundation section */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:checkAll
+	 *@description
+	 *
+	 * This is the check all function used to populate all classes in a category
+	**/	
+
 	$scope.checkFoundation = function(){
 		$scope.courses.foundation = $scope.foundation.map(function(item) { return item.id; });
 
 	};
 
 	/* Uncheck all button for foundation section */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:unCheckAll
+	 *@description
+	 *
+	 * This is the uncheck all function used to clear all classes in a category
+	**/	
+
 	$scope.uncheckFoundation = function(){
 		$scope.courses.foundation = [];
 	};
@@ -197,6 +295,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	};
 
 	/* Function to run when save button is clicked to upload selected values to database */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:save
+	 *@description
+	 *
+	 * This is the save function used to store checked values in database
+	**/	
+
 	$scope.save = function() {
 	 	$http.put('/selected', $scope.courses).success(function(response){
 	 		$window.location.reload();
@@ -204,6 +311,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	};
 
 	/* Function to run when save button is clicked to clear selected values in database so they can be overwriten */
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:save
+	 *@description
+	 *
+	 * This is the save function used to clear checked values in database
+	**/	
+
 	$scope.reset = function() {
 	 	$http.put('/selected/reset').success(function(response){
 	 		$window.location.reload();
@@ -211,6 +327,15 @@ myApp.controller('coursesController',function($scope, $http, $window){
 	};
 
 	/* Progress Bars  START*/
+
+	/**
+	 *@ngdoc service
+	 *@name myApp.event:progressBar
+	 *@description
+	 *
+	 * This is the prgress bar functions to calculate progress for each category
+	**/	
+
 	$scope.percentFoundation = function() {
 		return (((($scope.courses.foundation.length)/7) * 100).toFixed(0));
 	};
