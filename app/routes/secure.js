@@ -24,7 +24,7 @@ module.exports = function(router, passport){
 			};
 			res.json(docs);
 		});
-	});	
+	});
 
 	/* Route to update user info; inserting courses taken arrays */
 	router.put('/selected', function(req, res){
@@ -34,7 +34,7 @@ module.exports = function(router, passport){
 			};
 			res.json(docs);
 		});
-	});	
+	});
 
 	/* Router to handle navigation to homepage once user is logged in */
 	router.get('/home', function(req, res){
@@ -44,8 +44,8 @@ module.exports = function(router, passport){
 	/* Router to handle navigation to courses tab once user is logged in */
 	router.get('/courses', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
-	});	
-	
+	});
+
 	/* Router to handle foundation to courses tab once user is logged in */
 	router.get('/foundation', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
@@ -78,7 +78,7 @@ module.exports = function(router, passport){
 
 	/* Wrong URL */
 	router.get('/*', function(req,res){
-		res.redirect('/auth');
+		res.redirect('404.ejs');
 	});
 
 }
