@@ -1,3 +1,4 @@
+/* Angularjs application to use with our client-side pages: Handles Routes and dependencies!*/
 var myApp = angular.module('myApp', ['checklist-model','ngRoute', 'ngResource', 'LocalStorageModule']).
 	config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider.when('/home', {templateUrl: '../public/partials/homepage.html'});

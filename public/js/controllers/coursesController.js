@@ -1,6 +1,7 @@
-/* controller for foundation section */
+/* controller Checklist/Flowchart pages*/
 myApp.controller('coursesController',function($scope, $http, $window){
 
+	/* Sending a get request to retrived checked values and store them in our local variable */
 	$http.get('/selected').success(function(response){
 		$scope.courses.foundation = response.local.foundation;
 		$scope.courses.core = response.local.core;
@@ -9,6 +10,7 @@ myApp.controller('coursesController',function($scope, $http, $window){
 		$scope.courses.math = response.local.math;
 		$scope.courses.science = response.local.science;
 	});
+
 	/* Foundation Classes */
 	$scope.foundation = [
 		{id: 1000, text: 'Computer Science as a Field of Work and Study'},
@@ -118,6 +120,7 @@ myApp.controller('coursesController',function($scope, $http, $window){
 		{id: 2012, text: 'Biological Psychology'}
 	];
 
+	/* Local array storing checked values for each category */
 	$scope.courses = {
 		foundation: [],
 		core: [],
@@ -126,77 +129,88 @@ myApp.controller('coursesController',function($scope, $http, $window){
 		math: [],
 		science: [],
 	};
-
-	$scope.fills = [
-	{
-		fill: '#30FF7C'
-	},
-	{
-		fill: '#FC8B8B'
-	}
-	];
 	
+	/* Check all button for foundation section */
 	$scope.checkFoundation = function(){
 		$scope.courses.foundation = $scope.foundation.map(function(item) { return item.id; });
 
 	};
+
+	/* Uncheck all button for foundation section */
 	$scope.uncheckFoundation = function(){
 		$scope.courses.foundation = [];
 	};
 
+	/* Check all button for core section */
 	$scope.checkCore = function(){
 		$scope.courses.core = $scope.core.map(function(item) { return item.id; });
 
 	};
+
+	/* Uncheck all button for core section */
 	$scope.uncheckCore = function(){
 		$scope.courses.core = [];
 	};
 
+	/* Check all button for electives section */
 	$scope.checkElectives = function(){
 		$scope.courses.electives = $scope.electives.map(function(item) { return item.id; });
 
 	};
+
+	/* Uncheck all button for electives section */
 	$scope.uncheckElectives = function(){
 		$scope.courses.electives = [];
 	};
 
+	/* Check all button for capstone section */
 	$scope.checkCapstone = function(){
 		$scope.courses.capstone = $scope.capstone.map(function(item) { return item.id; });
 
 	};
+
+	/* Unheck all button for capstone section */
 	$scope.uncheckCapstone = function(){
 		$scope.courses.capstone = [];
 	};
 
+	/* Check all button for math section */
 	$scope.checkMath = function(){
 		$scope.courses.math = $scope.math.map(function(item) { return item.id; });
 
 	};
+
+	/* Uncheck all button for math section */
 	$scope.uncheckMath = function(){
 		$scope.courses.math = [];
 	};
 
+	/* Check all button for science section */
 	$scope.checkScience = function(){
 		$scope.courses.science = $scope.science.map(function(item) { return item.id; });
 
 	};
+
+	/* Uncheck all button for science section */
 	$scope.uncheckScience = function(){
 		$scope.courses.science = [];
 	};
 
+	/* Function to run when save button is clicked to upload selected values to database */
 	$scope.save = function() {
 	 	$http.put('/selected', $scope.courses).success(function(response){
 	 		$window.location.reload();
 	 	});
 	};
 
+	/* Function to run when save button is clicked to clear selected values in database so they can be overwriten */
 	$scope.reset = function() {
 	 	$http.put('/selected/reset').success(function(response){
 	 		$window.location.reload();
 	 	});
 	};
 
-	/* Progress Bars */
+	/* Progress Bars  START*/
 	$scope.percentFoundation = function() {
 		return (((($scope.courses.foundation.length)/7) * 100).toFixed(0));
 	};
@@ -235,4 +249,5 @@ myApp.controller('coursesController',function($scope, $http, $window){
 		};
 		return 100;
 	};
+	/* Progress Bars END */
 });

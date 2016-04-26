@@ -1,6 +1,7 @@
 var User = require('../models/user');
 module.exports = function(router, passport){
 
+	/* Checking if user is authenticated; if not, send redirect to main info page */
 	router.use(function(req, res, next){
 		if(req.isAuthenticated()){
 			return next();
@@ -8,13 +9,14 @@ module.exports = function(router, passport){
 		res.redirect('/auth');
 	});
 
-
+	/* Route to get user info; courses taken arrays */
 	router.get('/selected', function(req, res){
 		User.findOne({_id: req.user._id}, function (err, docs){
 			res.json(docs);
 		});
 	});
 
+	/* Route to update user info; clearing courses taken arrays */
 	router.put('/selected/reset', function(req, res){
 		User.findOneAndUpdate({_id: req.user._id}, {'$set': {'local.foundation': [], 'local.core': [], 'local.electives': [], 'local.capstone': [], 'local.math': [], 'local.science': []}} ,function (err, docs){
 			if(err){
@@ -24,6 +26,7 @@ module.exports = function(router, passport){
 		});
 	});	
 
+	/* Route to update user info; inserting courses taken arrays */
 	router.put('/selected', function(req, res){
 		User.findOneAndUpdate({_id: req.user._id}, {'$addToSet': {'local.foundation': { '$each': req.body.foundation}, 'local.core': { '$each': req.body.core}, 'local.electives': { '$each': req.body.electives}, 'local.capstone': { '$each': req.body.capstone}, 'local.math': { '$each': req.body.math}, 'local.science': { '$each': req.body.science}}}, {safe: true, new: true}, function (err, docs){
 			if(err){
@@ -33,52 +36,42 @@ module.exports = function(router, passport){
 		});
 	});	
 
-	/* localhost:8080/home */
+	/* Router to handle navigation to homepage once user is logged in */
 	router.get('/home', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});
 
-	/* localhost:8080/courses */
+	/* Router to handle navigation to courses tab once user is logged in */
 	router.get('/courses', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});	
 	
-	/* localhost:8080/foundation */
+	/* Router to handle foundation to courses tab once user is logged in */
 	router.get('/foundation', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});
 
-	/* localhost:8080/core */
+	/* Router to handle navigation to core tab once user is logged in */
 	router.get('/core', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});
 
-	/* localhost:8080/capstone */
+	/* Router to handle navigation to capstone tab once user is logged in */
 	router.get('/capstone', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});
 
-	/* localhost:8080/electives */
+	/* Router to handle navigation to electives tab once user is logged in */
 	router.get('/electives', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});
 
-	/* localhost:8080/humanities */
-	router.get('/humanities', function(req, res){
-		res.render('secured/home.ejs', { user: req.user });
-	});
-
-	/* localhost:8080/free-electives */
-	router.get('/free-electives', function(req, res){
-		res.render('secured/home.ejs', { user: req.user });
-	});
-
-	/* localhost:8080/math */
+	/* Router to handle navigation to math tab once user is logged in */
 	router.get('/math', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});
 
-	/* localhost:8080/science */
+	/* Router to handle navigation to science tab once user is logged in */
 	router.get('/science', function(req, res){
 		res.render('secured/home.ejs', { user: req.user });
 	});

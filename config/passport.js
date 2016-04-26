@@ -1,3 +1,4 @@
+/* Processes our authentication service */
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../app/models/user');
@@ -14,7 +15,7 @@ module.exports = function(passport){
 		});
 	});
 
-
+	/* Process sign up request */
 	passport.use('local-signup', new LocalStrategy({
 		usernameField: 'email',
 		passwordField: 'password',
@@ -43,6 +44,7 @@ module.exports = function(passport){
 		});
 	}));
 
+	/* Processes Log-in request */
 	passport.use('local-login', new LocalStrategy({
 			usernameField: 'email',
 			passwordField: 'password',

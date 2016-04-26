@@ -1,29 +1,29 @@
 module.exports = function(router, passport){
 
-	//localhost:8080/auth/
+	/* Handles flowcu.herokuapp.com/ route */
 	router.get('/', function(req, res){
 		res.render('index.ejs');
 	});
 
 
-	/* localhost:8080/auth/signup */
+	/* Handles flowcu.herokuapp.com/auth/signup route */
 	router.get('/signup', function(req, res){
 		res.render('auth/signup.ejs', { message: req.flash('signupMessage') });
 	});
 
-	/* localhost:8080/auth/login */
+	/* Handles flowcu.herokuapp.com/auth/login route */
 	router.get('/login', function(req, res){
 		res.render('auth/signup.ejs', { message: req.flash('signupMessage') });
 	});
 
-	/* On sign up */
+	/* Redirect to homepage upon succesful registration */
 	router.post('/signup', passport.authenticate('local-signup', {
 		successRedirect: '/home',
 		failureRedirect: '/auth/signup',
 		failureFlash: true
 	}));
 
-	/* On log-in */
+	/* Redirect to homepage upon succesful login */
 	router.post('/login', passport.authenticate('local-login', {
 		successRedirect: '/home',
 		failureRedirect: '/auth/signup',

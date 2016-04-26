@@ -4,8 +4,8 @@ var express  = require('express');
 var app      = express();
 var port 	 = process.env.PORT || 8080;
 
-var mongoose = require('mongoose');
-var passport = require('passport');
+var mongoose = require('mongoose');	//Mongoose as our mongodb database
+var passport = require('passport');	//To manage our authentication system
 var flash    = require('connect-flash');
 
 var morgan       = require('morgan');
@@ -14,7 +14,7 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var MongoStore   = require('connect-mongo')(session);
 
-var configDB = require('./config/database.js');
+var configDB = require('./config/database.js'); // To use the url from our mongoLab database
 
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
@@ -25,7 +25,7 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({extended: false})); // get information from html forms
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // Get information from json files
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
@@ -47,10 +47,12 @@ app.use(function(req, res, next){
 
 // Routes ======================================================================
 
+/* Will handle our authenticaion routes (Login, Signup, Logout)*/
 var auth = express.Router();
 require('./app/routes/auth.js')(auth, passport);
 app.use('/auth', auth);
 
+/* Will handle all other routes. (Once a user is logged in)*/
 var secure = express.Router();
 require('./app/routes/secure.js')(secure,passport);
 app.use('/', secure);
